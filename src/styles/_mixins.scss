@@ -1,3 +1,6 @@
+/** Mixins **/
+/** Flexbox Utilities **/
+
 @mixin flex($direction: row, $justify: flex-start, $align: stretch) {
   display: flex;
   flex-direction: $direction;
@@ -10,6 +13,8 @@
   grid-template-columns: repeat($columns, 1fr);
   grid-template-rows: repeat($rows, 1fr);
 }
+
+/* Buttons */
 
 @mixin button($bg-color, $text-color, $padding: 0.5rem 1rem, $radius: 0.5rem) {
   display: inline-block;
@@ -36,6 +41,7 @@
   }
 }
 
+/*media queries*/
 
 @mixin respond-to($breakpoint) {
   @if $breakpoint == 'md' {
@@ -48,4 +54,31 @@
       @content;
     }
   }
+}
+
+/*animations*/
+
+@mixin marquee-animation(
+  $duration: 30s,
+  $direction: left,
+  $iterations: infinite,
+  $timing-function: linear,
+  $name: marquee-lateral-animation
+) {
+  @keyframes #{$name} {
+    0% {
+      transform: translateX(0%);
+    }
+    100% {
+      @if $direction == left {
+        transform: translateX(-50%);
+      } @else if $direction == right {
+        transform: translateX(50%);
+      } @else {
+        transform: translateX(-50%);
+      }
+    }
+  }
+
+  animation: #{$name} $duration $timing-function $iterations;
 }

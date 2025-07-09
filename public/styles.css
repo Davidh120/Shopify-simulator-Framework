@@ -36,6 +36,53 @@ select {
   font: inherit;
 }
 
+/** Mixins **/
+/** Flexbox Utilities **/
+/* Buttons */
+/*media queries*/
+/*animations*/
+.top-bar {
+  background-color: #742bf8;
+  overflow: hidden;
+  height: 2rem;
+  display: flex;
+  align-items: center;
+}
+.top-bar .marquee {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  white-space: nowrap;
+}
+.top-bar .marquee__content {
+  display: inline-block;
+  animation: top-bar-marquee 30s linear infinite;
+}
+@keyframes top-bar-marquee {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+.top-bar .marquee__text {
+  display: inline-block;
+  color: #eaeaea;
+  font-size: 0.875rem;
+  font-weight: 700;
+  line-height: 24px;
+  white-space: nowrap;
+}
+.top-bar .marquee__separator {
+  display: inline-block;
+  margin: 0 8px;
+  vertical-align: middle;
+  fill: #a086eb;
+  width: 1.2rem;
+  height: auto;
+}
+
 /* === Global Styles === */
 body {
   margin: 0;
@@ -123,27 +170,4 @@ button, a {
 }
 .spacing--pb-md {
   padding-bottom: 1rem;
-}
-
-.btn__test {
-  display: inline-block;
-  background-color: #742bf8;
-  color: #eaeaea;
-  font-weight: bold;
-  padding: 0.5rem 1rem;
-  border-radius: 0.5rem;
-  border: none;
-  cursor: pointer;
-  text-align: center;
-  text-decoration: none;
-  font-family: inherit;
-  font-size: 1rem;
-  transition: background-color 0.3s ease, transform 0.1s ease;
-}
-.btn__test:hover {
-  background-color: rgb(87.6712328767, 7.6712328767, 232.3287671233);
-  transform: scale(1.05);
-}
-.btn__test:active {
-  transform: scale(0.98);
 }

@@ -1,0 +1,37 @@
+.top-bar {
+  background-color: $color-purple;
+  overflow: hidden;
+  height: 2rem;
+  display: flex;
+  align-items: center;
+
+  .marquee {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    white-space: nowrap;
+
+    &__content {
+      display: inline-block;
+      @include marquee-animation(30s, left, infinite, linear, top-bar-marquee);
+    }
+
+    &__text {
+      display: inline-block;
+      color: $color-white;
+      font-size: $font-size-small;
+      font-weight: $font-weight-bold;
+      line-height: 24px;
+      white-space: nowrap;
+    }
+
+    &__separator{
+        display: inline-block;
+        margin: 0 8px;
+        vertical-align: middle;
+        fill: $color-light-purple;
+        width: 1.2rem;
+        height: auto;
+    }
+  }
+}
