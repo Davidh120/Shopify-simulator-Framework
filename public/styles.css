@@ -1,0 +1,149 @@
+/*!****************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/styles/index.scss ***!
+  \****************************************************************************************************************/
+/** Colors **/
+/** Fonts **/
+/** Spacing **/
+/** Border Radius **/
+/* === Reset CSS === */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* === Global Styles === */
+body {
+  margin: 0;
+  font-family: "Anton", sans-serif;
+  font-size: 1rem;
+  color: #eaeaea;
+  background-color: #1c1c1c;
+  line-height: 1.5;
+}
+
+button, a {
+  cursor: pointer;
+}
+
+/* === Global Classes === */
+/* Layout Block */
+.layout__section {
+  width: 100%;
+  height: 100vh;
+}
+@media screen and (max-width: 992px) {
+  .layout__section {
+    height: 100dvh;
+  }
+}
+.layout__grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: repeat(17, 1fr);
+}
+@media screen and (max-width: 992px) {
+  .layout__grid {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: repeat(34, 1fr);
+  }
+}
+
+/* Typography Modifiers */
+.text--center {
+  text-align: center;
+}
+.text--right {
+  text-align: right;
+}
+.text--left {
+  text-align: left;
+}
+
+/* Flex Utilities */
+.flex {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: stretch;
+}
+.flex--center {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.flex--row {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: stretch;
+}
+.flex--column {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: stretch;
+}
+
+/* Spacing Utilities */
+.spacing--mt-md {
+  margin-top: 1rem;
+}
+.spacing--mb-md {
+  margin-bottom: 1rem;
+}
+.spacing--pt-md {
+  padding-top: 1rem;
+}
+.spacing--pb-md {
+  padding-bottom: 1rem;
+}
+
+.btn__test {
+  display: inline-block;
+  background-color: #742bf8;
+  color: #eaeaea;
+  font-weight: bold;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  border: none;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  font-family: inherit;
+  font-size: 1rem;
+  transition: background-color 0.3s ease, transform 0.1s ease;
+}
+.btn__test:hover {
+  background-color: rgb(87.6712328767, 7.6712328767, 232.3287671233);
+  transform: scale(1.05);
+}
+.btn__test:active {
+  transform: scale(0.98);
+}
