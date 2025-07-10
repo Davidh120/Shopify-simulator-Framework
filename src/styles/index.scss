@@ -1,6 +1,8 @@
 @import './variables';
 @import './reset';
 @import './mixins';
+@import './sections/header.scss';
+@import './snippets/top-bar.scss';
 
 /* === Global Styles === */
 
@@ -71,9 +73,3 @@ button, a {
   &--pt-md { padding-top: $spacing-md; }
   &--pb-md { padding-bottom: $spacing-md; }
 }
-
-.btn__test{
-    @include button($color-purple, $color-white);
-}
-
-

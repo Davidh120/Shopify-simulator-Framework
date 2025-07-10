@@ -1,0 +1,139 @@
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 9999;
+
+  .header__nav {
+    @include flex(row, space-between, center);
+    background-color: transparent;
+    padding: $spacing-md $spacing-lg;
+    font-family: sans-serif;
+    color: white;
+
+    .header__menu-toggle {
+      display: none;
+    }
+
+    .header__logo {
+      @include flex(row, space-between, center);
+      gap: $spacing-xs;
+      font-weight: 600;
+      font-size: $font-size-large;
+      letter-spacing: 0.05em;
+
+      img {
+        width: 1.5rem;
+        height: auto;
+        object-fit: contain;
+      }
+
+      .divider {
+        color: #8e8e8e;
+        margin: 0 0.25rem;
+      }
+
+      .store {
+        font-weight: 900;
+        color: white;
+      }
+    }
+
+    .header__coins {
+      @include flex(row, space-between, center);
+      gap: 0.5rem;
+      background: rgba(255, 255, 255, 0.05);
+      padding: 0.35rem 0.75rem;
+      border-radius: 5rem;
+      border: 1.5px solid $color-light-purple;
+
+      span {
+        font-size: 0.875rem;
+        color: white;
+        white-space: nowrap;
+      }
+
+      .crypto-icon {
+        width: 24px;
+        height: 24px;
+        object-fit: contain;
+        transition: transform 0.2s ease;
+        &:hover {
+          transform: scale(1.1);
+        }
+      }
+    }
+
+    .header__actions {
+      @include flex(row, space-between, center);
+      gap: 1rem;
+
+      a {
+        color: white;
+        font-size: $font-size-small;
+        font-weight: $font-weight-bold;
+        text-decoration: none;
+        transition: color 0.2s ease;
+        &:hover {
+          color: $color-light-purple;
+        }
+      }
+    }
+
+    .header__cart {
+      @include flex(row, center, center);
+      background: $color-purple;
+      padding: $spacing-sm $spacing-md;
+      border-radius: $border-radius-sm;
+      fill: $color-white;
+      &:hover {
+          img{
+            transform: scale(1.1);
+          }
+        }
+    }
+  }
+
+  @include respond-to(md){
+    .header__nav {
+
+    .header__logo {
+      font-size: $font-size-xsmall;
+
+      img {
+        width: 24px;
+        height: 24px;
+        margin-right: 0.25rem;
+      }
+    }
+
+    .header__coins,
+    .header__actions a{
+      display: none;
+    }
+
+    .header__cart {
+      padding: $spacing-sm $spacing-sm;
+    }
+
+    .header__menu-toggle {
+      @include flex(column, space-between);
+      width: 20px;
+      height: 16px;
+      cursor: pointer;
+
+      span {
+        display: block;
+        height: 2px;
+        background: #7c3aed;
+        border-radius: 1px;
+      }
+    }
+  }
+}
+}
+
+.bg-nav{
+    background: rgba($color-black, 0.2);
+      backdrop-filter: blur(10px);
+      transition: all 0.2s ease-in-out;
+}
