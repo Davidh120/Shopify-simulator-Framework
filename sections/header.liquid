@@ -1,3 +1,24 @@
-<header class="header">
+<header class="header" id="header">
     {% render 'top-bar', data: settings %}
+    <nav class="header__nav">
+        <div class="header__logo">
+                <img src="{{ settings['header'].settings.logo | asset_url }}" alt="Shuffle Logo" loading="lazy" width="20" height="20">
+                SHUFFLE<span class="divider"> | </span><span class="store">STORE</span>
+            </div>
+        <div class="header__coins">
+            <span>We Accept</span>
+            {% for crypto in settings['header'].settings.criptos %}
+                {% assign name = crypto[0] %}
+                {% assign icon = crypto[1] %}
+                <img src="{{ icon | asset_url }}" alt="{{ name }}" class="crypto-icon" loading="lazy" width="24" height="24">
+            {% endfor %}
+        </div>
+        <div class="header__actions">
+            <a href="#">All Products</a>
+            <a href="#">Collections</a>
+            <div class="header__cart">
+                <img src="{{ settings['header'].settings.cart_icon | asset_url }}" alt="Shuffle Logo" loading="lazy" width="20" height="20">
+            </div>
+        </div>
+    </nav>
 </header>

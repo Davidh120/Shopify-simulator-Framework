@@ -13,6 +13,20 @@
         "marquee_text": "FREE SHIPPING FOR ORDERS OVER $100"
       }
     },
+    "header": {
+      "type": "header",
+      "settings": {
+        "logo": "shuffle_logo.png",
+        "criptos": {
+          "bitcoin": "bitcoin.svg",
+          "ethereum": "ethereum.svg",
+          "litecoin": "litecoin.svg",
+          "dogecoin": "dogecoin.svg",
+          "usdc": "usdc.svg"
+        },
+        "cart_icon": "cart.svg"
+      }
+    },
     "hero-banner": {
       "type": "hero-banner",
       "settings": {
