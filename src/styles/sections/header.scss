@@ -10,6 +10,10 @@
     font-family: sans-serif;
     color: white;
 
+    .header__menu-toggle {
+      display: none;
+    }
+
     .header__logo {
       @include flex(row, space-between, center);
       gap: $spacing-xs;
@@ -88,6 +92,44 @@
         }
     }
   }
+
+  @include respond-to(md){
+    .header__nav {
+
+    .header__logo {
+      font-size: $font-size-xsmall;
+
+      img {
+        width: 24px;
+        height: 24px;
+        margin-right: 0.25rem;
+      }
+    }
+
+    .header__coins,
+    .header__actions a{
+      display: none;
+    }
+
+    .header__cart {
+      padding: $spacing-sm $spacing-sm;
+    }
+
+    .header__menu-toggle {
+      @include flex(column, space-between);
+      width: 20px;
+      height: 16px;
+      cursor: pointer;
+
+      span {
+        display: block;
+        height: 2px;
+        background: #7c3aed;
+        border-radius: 1px;
+      }
+    }
+  }
+}
 }
 
 .bg-nav{

@@ -56,6 +56,9 @@ select {
   font-family: sans-serif;
   color: white;
 }
+.header .header__nav .header__menu-toggle {
+  display: none;
+}
 .header .header__nav .header__logo {
   display: flex;
   flex-direction: row;
@@ -133,6 +136,38 @@ select {
 }
 .header .header__nav .header__cart:hover img {
   transform: scale(1.1);
+}
+@media screen and (max-width: 992px) {
+  .header .header__nav .header__logo {
+    font-size: 0.75rem;
+  }
+  .header .header__nav .header__logo img {
+    width: 24px;
+    height: 24px;
+    margin-right: 0.25rem;
+  }
+  .header .header__nav .header__coins,
+  .header .header__nav .header__actions a {
+    display: none;
+  }
+  .header .header__nav .header__cart {
+    padding: 0.5rem 0.5rem;
+  }
+  .header .header__nav .header__menu-toggle {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: stretch;
+    width: 20px;
+    height: 16px;
+    cursor: pointer;
+  }
+  .header .header__nav .header__menu-toggle span {
+    display: block;
+    height: 2px;
+    background: #7c3aed;
+    border-radius: 1px;
+  }
 }
 
 .bg-nav {
