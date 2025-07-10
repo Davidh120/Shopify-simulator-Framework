@@ -14,11 +14,14 @@ const engine = new Liquid({
   extname: '.liquid',
 });
 
+engine.registerFilter("asset_url", (value) => `/assets/${value}`);
+
 app.engine('liquid', engine.express());
 app.set('views', path.resolve(__dirname, 'templates'));
 app.set('view engine', 'liquid');
 
 app.use(express.static('public'));
+app.use("/assets", express.static(path.join(__dirname, "assets")));
 
 const products = require('./data/products.json');
 const collections = require('./data/collections.json');
