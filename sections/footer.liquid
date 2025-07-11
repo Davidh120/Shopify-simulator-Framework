@@ -1,0 +1,86 @@
+<footer class="footer">
+  <div class="footer__container">
+    <div class="footer__content">
+      <div class="footer__column">
+        <div class="footer__store">
+            <div class="footer__logo">
+            <img
+                src="{{ settings['header'].settings.logo | asset_url }}"
+                alt="{{ settings['footer'].settings.logo_text}}"
+                loading="lazy"
+                width="20"
+                height="20"
+                class="footer__logo-img"
+            >
+            <span class="footer__divider"> | </span>
+            <span class="footer__brand">STORE</span>
+            </div>
+            <div class="footer__socials--responsive">
+            <a href="#" class="footer__link">FACEBOOK</a>
+            <a href="#" class="footer__link">X(TWITTER)</a>
+            <a href="#" class="footer__link">INSTAGRAM</a>
+            </div>
+        </div>
+        <p class="footer__text">
+            © 2025, Shuffle.store Operated by Studio Plaid. Need help?<br/>
+            Email <a href="mailto:support@shuffle.store" class="footer__link">support@shuffle.store</a>
+        </p>
+      </div>
+
+      <div class="footer__column">
+        <nav class="footer__nav">
+          {% for link in settings.footer.settings.links %}
+            {% if forloop.index <= 4 %}
+              <a
+                href="{{ link.url }}"
+                class="footer__link{% if forloop.first %} footer__link--active{% endif %}"
+              >
+                {{ link.label | upcase }}
+              </a>
+            {% endif %}
+          {% endfor %}
+        </nav>
+        <div class="footer__links">
+          {% for link in settings.footer.settings.links offset: 4 %}
+            <a
+              href="{{ link.url }}"
+              class="footer__link"
+            >
+              {{ link.label | upcase }}
+            </a>
+          {% endfor %}
+        </div>
+        <div class="footer__payments">
+          <span class="footer__payments-text">We accept all major cards, PayPal & crypto</span>
+          <div class="footer__crypto-icons">
+            {% for crypto in settings.header.settings.criptos %}
+              {% assign name = crypto[0] %}
+              {% assign icon = crypto[1] %}
+              <img
+                src="{{ icon | asset_url }}"
+                alt="{{ name }}"
+                class="footer__crypto-icon"
+                loading="lazy"
+                width="24"
+                height="24"
+              >
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+
+      <div class="footer__column">
+        <p class="footer__subscribe-text">Subscribe and receive drop notifications</p>
+        <div class="footer__subscribe-box">
+          <input type="email" placeholder="Enter Email" class="footer__subscribe-input">
+          <button type="submit" class="footer__subscribe-button">🡢</button>
+        </div>
+        <div class="footer__socials">
+          <a href="#" class="footer__link">FACEBOOK</a>
+          <a href="#" class="footer__link">X(TWITTER)</a>
+          <a href="#" class="footer__link">INSTAGRAM</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
