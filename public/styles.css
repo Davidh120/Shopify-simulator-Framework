@@ -592,7 +592,7 @@ select {
 }
 @media screen and (max-width: 992px) {
   .hero .hero__background {
-    grid-row: 1/34;
+    grid-row: 1/30;
   }
   .hero .hero__button {
     display: inline-block;
@@ -609,7 +609,7 @@ select {
     font-size: 1rem;
     transition: background-color 0.3s ease, transform 0.1s ease;
     grid-column: 2/6;
-    grid-row: 28;
+    grid-row: 26;
   }
   .hero .hero__button:hover {
     background-color: rgb(87.6712328767, 7.6712328767, 232.3287671233);
@@ -618,13 +618,19 @@ select {
   .hero .hero__button:active {
     transform: scale(0.98);
   }
+  .hero .hero__marquee {
+    grid-row: 30/34;
+  }
 }
 @media screen and (max-width: 768px) {
   .hero .hero__background {
-    grid-row: 1/34;
+    grid-row: 1/30;
   }
   .hero .hero__button {
     display: none;
+  }
+  .hero .hero__marquee {
+    grid-row: 30/34;
   }
 }
 

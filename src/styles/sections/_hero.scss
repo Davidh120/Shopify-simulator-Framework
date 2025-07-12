@@ -64,25 +64,33 @@
 
     @include respond-to(md){
         .hero__background{
-            grid-row: 1/34
+            grid-row: 1/30
         }
 
         .hero__button{
             @include button($color-purple, $color-white, 1rem 1rem, $border-radius-sm );
             grid-column: 2/6;
-            grid-row: 28;
+            grid-row: 26;
         }
+
+        .hero__marquee{
+        grid-row: 30/34;
+    }
         
     }
 
     @include respond-to(sm){
         .hero__background{
-            grid-row: 1/34
+            grid-row: 1/30
         }
 
         .hero__button{
             display: none;
         }
+
+        .hero__marquee{
+        grid-row: 30/34;
+    }
     
     }
 }
