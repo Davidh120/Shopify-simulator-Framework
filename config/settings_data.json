@@ -4,7 +4,8 @@
       "type": "featured-products",
       "settings": {
         "heading": "Our Featured Products",
-        "background_color": "#ffffff"
+        "background_color": "#ffffff",
+        "cart_icon": "cart.svg"
       }
     },
     "top-bar": {

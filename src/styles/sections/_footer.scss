@@ -180,9 +180,10 @@
   }
 
   @include respond-to(md) {
+
     .footer__content {
       flex-direction: column;
-      padding: $spacing-md;
+      padding: 0 $spacing-md;
       width: 100%;
     }
 
@@ -294,5 +295,11 @@
         transform: none;
       }
     }
+  }
+}
+
+@include respond-to(sm) {
+  .footer{
+    padding: 0;
   }
 }
