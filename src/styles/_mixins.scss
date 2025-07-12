@@ -1,0 +1,89 @@
+/** Mixins **/
+/** Flexbox Utilities **/
+
+@mixin flex($direction: row, $justify: flex-start, $align: stretch) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+@mixin grid-layout($columns: 12, $rows: 17) {
+  display: grid;
+  grid-template-columns: repeat($columns, 1fr);
+  grid-template-rows: repeat($rows, 1fr);
+}
+
+/* Buttons */
+
+@mixin button($bg-color, $text-color, $padding: 0.5rem 1rem, $radius: 0.5rem) {
+  display: inline-block;
+  background-color: $bg-color;
+  color: $text-color;
+  font-weight: bold;
+  padding: $padding;
+  border-radius: $radius;
+  border: none;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  font-family: inherit;
+  font-size: 1rem;
+  transition: background-color 0.3s ease, transform 0.1s ease;
+
+  &:hover {
+    background-color: darken($bg-color, 10%);
+    transform: scale(1.05);
+  }
+
+  &:active {
+    transform: scale(0.98);
+  }
+}
+
+/*media queries*/
+
+@mixin respond-to($breakpoint) {
+  @if $breakpoint == 'lg' {
+    @media screen and (max-width: 1183px) {
+      @content;
+    }
+  }
+  @if $breakpoint == 'md' {
+    @media screen and (max-width: 992px) {
+      @content;
+    }
+  }
+  @else if $breakpoint == 'sm' {
+    @media screen and (max-width: 768px) {
+      @content;
+    }
+  }
+}
+
+/*animations*/
+
+@mixin marquee-animation(
+  $duration: 30s,
+  $direction: left,
+  $iterations: infinite,
+  $timing-function: linear,
+  $name: marquee-lateral-animation
+) {
+  @keyframes #{$name} {
+    0% {
+      transform: translateX(0%);
+    }
+    100% {
+      @if $direction == left {
+        transform: translateX(-50%);
+      } @else if $direction == right {
+        transform: translateX(50%);
+      } @else {
+        transform: translateX(-50%);
+      }
+    }
+  }
+
+  animation: #{$name} $duration $timing-function $iterations;
+}

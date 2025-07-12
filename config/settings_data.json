@@ -4,16 +4,41 @@
       "type": "featured-products",
       "settings": {
         "heading": "Our Featured Products",
-        "background_color": "#ffffff"
+        "background_color": "#ffffff",
+        "cart_icon": "cart.svg"
+      }
+    },
+    "top-bar": {
+      "type": "top-bar",
+      "settings": {
+        "marquee_text": "FREE SHIPPING FOR ORDERS OVER $100"
+      }
+    },
+    "header": {
+      "type": "header",
+      "settings": {
+        "logo": "shuffle_logo.png",
+        "criptos": {
+          "bitcoin": "bitcoin.svg",
+          "ethereum": "ethereum.svg",
+          "litecoin": "litecoin.svg",
+          "dogecoin": "dogecoin.svg",
+          "usdc": "usdc.svg"
+        },
+        "cart_icon": "cart.svg"
       }
     },
     "hero-banner": {
       "type": "hero-banner",
       "settings": {
-        "button_text": "Shop Now",
+        "button_text": "View the collections",
         "button_link": "/collections/all",
-        "marquee_text": "Free Shipping on Orders Over $50",
-        "background_image": "hero_banner_img.avif"
+        "marquee_text": "SHUFFLE ESSENTIALS",
+        "background_images": [
+          "hero_banner_img.avif",
+          "homepage_bottom_banner.avif",
+          "shuffle_essentials.webp"
+        ]
       }
     },
     "footer": {

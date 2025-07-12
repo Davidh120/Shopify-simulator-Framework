@@ -1,8 +1,16 @@
 <section class="featured-products">
-  <h2>{{ settings['featured-products'].settings.heading }}</h2>
-  <div class="product-list">
-    {% for product in products %}
-      {% render 'product-card', product: product %}
-    {% endfor %}
+  <div class="featured-products__container">
+    <div class="featured-products__list" data-responsive>
+      {% for product in products %}
+        <div
+          class="featured-products__item{% if forloop.index > 4 %} featured-products__item--hidden{% endif %}"
+          data-index="{{ forloop.index }}"
+        >
+          {% render 'product-card', product: product, data: settings %}
+        </div>
+      {% endfor %}
+    </div>
+
+    <button class="featured-products__button">VIEW ALL</button>
   </div>
 </section>
