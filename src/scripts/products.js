@@ -11,6 +11,10 @@ document.addEventListener("DOMContentLoaded", () => {
     return;
   }
 
+  /**
+   * Shows the next chunk of products when the user scrolls to the bottom.
+   * @param {number} chunkSize - The number of products to show at a time.
+   */
   function showNextProducts() {
     const nextGroup = allProducts.slice(currentVisible, currentVisible + chunkSize);
     nextGroup.forEach(el => {
@@ -25,6 +29,11 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
+  /**
+   * Listens for the user to scroll to the bottom of the page. When
+   * that happens, it shows the next chunk of products.
+   * @listens window#scroll
+   */
   function onScroll() {
     const scrollY = window.scrollY;
     const viewportHeight = window.innerHeight;
