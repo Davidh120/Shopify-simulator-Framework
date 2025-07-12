@@ -176,48 +176,6 @@ select {
   transition: all 0.2s ease-in-out;
 }
 
-.top-bar {
-  background-color: #742bf8;
-  overflow: hidden;
-  height: 2rem;
-  display: flex;
-  align-items: center;
-}
-.top-bar .marquee {
-  width: 100%;
-  overflow: hidden;
-  position: relative;
-  white-space: nowrap;
-}
-.top-bar .marquee__content {
-  display: inline-block;
-  animation: top-bar-marquee 30s linear infinite;
-}
-@keyframes top-bar-marquee {
-  0% {
-    transform: translateX(0%);
-  }
-  100% {
-    transform: translateX(-50%);
-  }
-}
-.top-bar .marquee__text {
-  display: inline-block;
-  color: #eaeaea;
-  font-size: 0.875rem;
-  font-weight: 700;
-  line-height: 24px;
-  white-space: nowrap;
-}
-.top-bar .marquee__separator {
-  display: inline-block;
-  margin: 0 8px;
-  vertical-align: middle;
-  fill: #a086eb;
-  width: 1.2rem;
-  height: auto;
-}
-
 .footer {
   padding: 2rem 0;
   font-size: 0.875rem;
