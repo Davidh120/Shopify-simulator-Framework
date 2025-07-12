@@ -1,0 +1,17 @@
+<div class="marquee" style="height: {{ height }}; background-color: {{ background }};">
+  <div class="marquee__content">
+    <p class="marquee__text" style="font-size: {{ font_size }};">
+      {% for i in (1..20) %}
+        {{ text }}
+        <svg
+          class="marquee__separator"
+          viewBox="-50 -50 100 100"
+          xmlns="http://www.w3.org/2000/svg"
+          style="width: {{ separator_width }};"
+        >
+          <path d="M 0,-40 C 12,-12 12,-12 40,0 C 12,12 12,12 0,40 C -12,12 -12,12 -40,0 C -12,-12 -12,-12 0,-40 Z"/>
+        </svg>
+      {% endfor %}
+    </p>
+  </div>
+</div>
