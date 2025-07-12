@@ -1,5 +1,5 @@
 <header class="header" id="header">
-    {% render 'top-bar', data: settings %}
+    {% render 'marquee', text: settings['top-bar'].settings.marquee_text, font_size: '$font-size-small', height: '2rem', separator_width: '1.2rem', background: '#742bf8' %}
     <nav class="header__nav">
         <div class="header__menu-toggle">
             <span></span>

@@ -44,6 +44,11 @@
 /*media queries*/
 
 @mixin respond-to($breakpoint) {
+  @if $breakpoint == 'lg' {
+    @media screen and (max-width: 1183px) {
+      @content;
+    }
+  }
   @if $breakpoint == 'md' {
     @media screen and (max-width: 992px) {
       @content;

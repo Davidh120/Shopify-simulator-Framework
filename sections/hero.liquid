@@ -1,0 +1,12 @@
+<section class="hero layout__section layout__grid">
+  <div class="hero__background">
+    {% assign images = settings['hero-banner'].settings.background_images %}
+    {% for image in images %}
+      <div class="hero__background_slide" style="background-image: url('{{ image | asset_url }}')"></div>
+    {% endfor %}
+  </div>
+  <div class="hero__button">{{ settings['hero-banner'].settings.button_text | upcase }}</div>
+  <div class="hero__marquee">
+    {% render 'marquee', text: settings['hero-banner'].settings.marquee_text, font_size: 'calc(5.88vh*1.5)', height: '100%', separator_width: 'calc(5.88vh*1.5)', background: 'transparent'%}
+  </div>
+</section>
